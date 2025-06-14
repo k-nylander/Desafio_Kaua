@@ -1,0 +1,6 @@
+@Desafio_Kaua_HostAddress = http://localhost:5118
+
+GET {{Desafio_Kaua_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
