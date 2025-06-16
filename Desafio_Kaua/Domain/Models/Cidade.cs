@@ -3,26 +3,29 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Desafio_Kaua.Domain.Models
 {
-    [Table("cidades")]
+    [Table("cidades_kaua")]
     public class Cidade
     {
         [Key]
-        public int id { get; protected set; }
-        public string nome { get; protected set; }
-        public string? ibge { get; protected set; }
-        public string? siafi { get; protected set; }
-        public string? gia { get; protected set; }
-        public Estado estado { get; protected set; }
+        public int id { get; private set; }
+        public string nome { get; private set; }
+        public string ibge { get; private set; }
+        public string? siafi { get; private set; }
+        public string? gia { get; private set; }
+
+        [ForeignKey("estado")]
+        public int estadoid { get; set; }
+        public Estado estado { get; private set; }
 
         protected Cidade() { }
-        public Cidade(int id, string nome, string? ibge, string? siafi, string gia, Estado estado)
+        public Cidade(string nome, string ibge, string? siafi, string? gia, int estadoId, Estado estado)
         {
-            this.id = id;
             this.nome = nome;
             this.ibge = ibge;
             this.siafi = siafi;
             this.gia = gia;
-            this.estado = estado;
+            this.estadoid = estadoId;
+            this.estado = estado ?? throw new ArgumentNullException(nameof(estado));
         }
     }
 }

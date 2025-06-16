@@ -9,14 +9,8 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.6" />
     <PackageReference Include="Npgsql" Version="9.0.3" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.4" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Application\Services\" />
-    <Folder Include="Application\ViewModels\" />
-    <Folder Include="Domain\DTOs\" />
-    <Folder Include="Infra\Repositories\" />
   </ItemGroup>
 
 </Project>
